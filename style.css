@@ -1,0 +1,209 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+body {
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.75rem;
+  color: hsl(240, 6%, 50%);
+}
+
+main {
+  background-color: white;
+  margin: 0 1.5rem;
+  padding: 8.25rem 1.5rem 3rem;
+  background-image: url(images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  max-width: 57.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1.5rem;
+}
+
+picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 14.875rem;
+}
+
+img {
+  position: absolute;
+  transform: translateY(-85%);
+}
+
+.block img {
+  visibility: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+}
+
+abbr {
+  text-decoration: none;
+  cursor: default;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.125rem solid hsl(240, 5%, 91%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(237, 12%, 33%);
+  font-size: 0.875rem;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+button::after {
+  content: url(images/icon-arrow-down.svg);
+  width: 0.625rem;
+  height: 0.4375rem;
+}
+
+button[aria-expanded="true"] {
+  font-weight: 700;
+  color: hsl(238, 29%, 16%);
+}
+
+button:active {
+  color: hsl(14, 88%, 65%);
+}
+
+p {
+  margin-top: 1rem;
+}
+
+@media (width >= 1024px) {
+  body {
+    font-size: 0.875rem;
+  }
+
+  main {
+    flex-direction: row;
+    background-position: center left;
+    justify-content: center;
+    padding: 4.375rem 5.625rem;
+    overflow: hidden;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-position-x: -610px;
+    background-position-y: -320px;
+  }
+
+  picture {
+    width: 31.25rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    transform: translate(-38%, -2%);
+  }
+
+  .block img {
+    visibility: visible;
+    position: absolute;
+    transform: translate(-318%, -32%);
+  }
+  .container {
+    width: 50%;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
